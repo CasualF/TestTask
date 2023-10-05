@@ -14,4 +14,5 @@ def send_requested_email(email_data: EmailRequest):
                                text=email_data.message)
         return {'msg': f"Email was sent to {email_data.to}"}
     except:
-        return {'msg': f"Couldn't send email to {email_data.to}"}
+        raise HTTPException(detail=f"Couldn't send email to {email_data.to}",
+                            status_code=status.HTTP_400_BAD_REQUEST)

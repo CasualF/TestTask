@@ -12,5 +12,4 @@ def test_email(to, subject, message, status_code, cl: TestClient):
             'subject': subject,
             'message': message}
     response = cl.post('/send_email', json=data)
-    print(response.content)
     assert response.status_code == status_code
