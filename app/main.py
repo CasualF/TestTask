@@ -1,3 +1,4 @@
+import logging
 from fastapi import FastAPI
 
 from app.config import app_configs
